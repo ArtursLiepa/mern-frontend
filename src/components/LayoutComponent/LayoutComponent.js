@@ -6,11 +6,11 @@ import { useEffect, useState } from "react";
 
 const LayoutComponent = () => {
   const [information, setInformation] = useState({});
-  // const url = process.env.REACT_APP_API_URL;
+  const url = process.env.REACT_APP_API_URL;
   // const url = "http://localhost:3005";
 
   const getInformationTitle = () => {
-    fetch("http://localhost:3005/information")
+    fetch(`${url}/information`)
       .then((response) => response.json())
       .then((data) => setInformation(data));
   };
