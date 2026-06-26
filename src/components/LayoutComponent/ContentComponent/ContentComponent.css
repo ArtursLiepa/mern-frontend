@@ -1,0 +1,18 @@
+.contentContainer {
+    flex: 1;
+    width: 100%;
+    background-color: rgb(172, 168, 163);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.testingList {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    list-style: disc;
+    font-size: 1.5rem;
+    font-weight: 600;
+}

@@ -1,0 +1,12 @@
+.headerContainer {
+    height: auto;
+    width: 100%;
+    background-color: rgb(183, 189, 172);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.headerContainer h1 {
+    background-color: inherit;
+}
