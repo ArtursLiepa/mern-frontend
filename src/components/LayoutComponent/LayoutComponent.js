@@ -7,8 +7,8 @@ import { useEffect, useState } from "react";
 const LayoutComponent = () => {
   const [information, setInformation] = useState({});
   const url = process.env.REACT_APP_API_URL;
-  console.log("FULL API URL:", JSON.stringify(url));
   // const url = "http://localhost:3005";
+  console.log("FULL API URL:", JSON.stringify(url));
 
   const getInformationTitle = () => {
     fetch(`${url}/information`)
