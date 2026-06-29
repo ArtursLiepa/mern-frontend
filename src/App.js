@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 
 function App() {
   const [techList, setTechList] = useState([]);
+  const [projectInfo, setProjectInfo] = useState({});
 
   const url = process.env.REACT_APP_API_URL;
 
@@ -15,7 +16,14 @@ function App() {
       .then((data) => setTechList(data));
   };
 
+  const getProjectInfo = () => {
+    fetch(`${url}/projectinfos`)
+      .then((response) => response.json())
+      .then((data) => setProjectInfo(data));
+  };
+
   useEffect(getTechList, []);
+  useEffect(getProjectInfo, []);
 
   return (
     <BrowserRouter>
@@ -23,7 +31,9 @@ function App() {
         <Route path="/" element={<LayoutComponent />}>
           <Route
             index
-            element={<StartUpComponent techList={techList} />}
+            element={
+              <StartUpComponent projectInfo={projectInfo} techList={techList} />
+            }
           ></Route>
         </Route>
       </Routes>
