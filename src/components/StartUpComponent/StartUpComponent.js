@@ -1,11 +1,18 @@
 import "./StartUpComponent.css";
 
-const StartUpComponent = () => {
+const StartUpComponent = ({ techList }) => {
+  const UsedTechlist = techList.map((items) => {
+    return <li key={items.id}>{items.name}</li>;
+  });
+
   return (
     <div className="startupContainer">
-      {`This MERN (MongoDB, Express, React and Nodejs) full-stack app is meant for testing:`}
+      {`This project demonstrates modern full-stack web development using the MERN stack and cloud-native deployment technologies.`}
       <ul className="testingList">
-        <li>The MINIKUBE Node work</li>
+        <fieldset>
+          <legend></legend>
+          <ul>{UsedTechlist}</ul>
+        </fieldset>
       </ul>
     </div>
   );
